@@ -52,9 +52,23 @@
         plausible('TestEvent');
       }
     </script>
+    <script>
+      // Lire l'identifiant depuis l'URL
+      const params = new URLSearchParams(window.location.search);
+      const id = params.get('id');
+
+      if (id) {
+        // Envoyer l'événement à Google Analytics
+        gtag('event', 'clic_lien_etudiant', {
+          'identifiant_etudiant': id
+        });
+      }
+    </script>
+
 </body>
 
 </html>
+
 
 
 
