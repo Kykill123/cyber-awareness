@@ -26,9 +26,21 @@
     <p>
         Aucune donnée personnelle n’est collectée.
     </p>
+    <script>
+      const params = new URLSearchParams(window.location.search);
+      const id = params.get('id');
 
+      if (id && window.plausible) {
+        plausible('LienClique', {
+          props: {
+            identifiant: id
+          }
+        });
+      }
+    </script>
 </body>
 
 </html>
+
 
 
